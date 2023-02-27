@@ -1,0 +1,62 @@
+body {
+    font-family: monospace, serif;
+    background-color: rgb(20, 5, 5);
+    color : rgb(221, 195, 195);
+    padding-top: 56px;
+    margin-left: 5%;
+}
+
+h3 {
+    margin-top: 5%;
+    color : rgb(251, 229, 225);
+}
+
+#content-main {
+    margin-left: 2%;
+    margin-right: 38%;
+    margin-top: 4%;
+}
+
+#post-content {
+    color : rgb(189, 155, 155);
+}
+
+a:link {
+    color:rgb(221, 195, 195);
+}
+
+a:visited {
+    color:rgb(221, 195, 195);
+}
+
+a:hover {
+    color:rgb(255, 250, 250);
+}
+
+.navbar-custom {
+    font-family: monospace, serif;
+    background-color: rgb(30, 10, 10);
+    border-bottom: 2px;
+    border-top: 0px;
+    border-right:  0px;
+    border-left: 0px;
+    border-style: solid;
+    border-color: black;
+}
+
+.list-group-item {
+    background-color: rgb(40, 15, 15);
+    width: 25%;
+}
+
+@media (min-width: 992px){
+    .navbar li {
+        margin-left : 1em;
+        margin-right : 1em;
+    }
+}
+
+.logo {
+    height: auto;    
+    max-width: 10%;
+}

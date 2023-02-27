@@ -1,4 +1,3 @@
 site_virtual_env
-static
 db.sqlite3
 *.pyc

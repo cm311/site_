@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django import forms
 
 # Create your models here.
 class Tag(models.Model):

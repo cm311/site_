@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load blog_extras %}
+{% load static %}
+{% block content %}
+    <div id="content-main">
+        <h4>Some visualizations of common algorithms coded in javascript and
+            <a href="https://p5js.org/"><img src="{% static 'p5js.png' %}" class="rounded logo" alt="..."></a>
+        </h4>
+        <ul class="list-group">
+            <li class="list-group-item"> 
+                <a href="/djikstras/">Djikstra's shortest path</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/bubblesort/">Bubble Sort</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
