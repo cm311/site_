@@ -1,5 +1,6 @@
 
 {% load bootstrap4 %}
+{% load static %}
 
 
 <!-- Footer.  Added to the end of the each page. -->
@@ -12,12 +13,12 @@
         </li>
 
         <li>
-            linkedin : https://www.linkedin.com/in/colin-m-6ba3b3137/
+            linkedin : <a href="https://www.linkedin.com/in/colin-m-6ba3b3137/">Linkedin</a>
         </li>
     </ul>
 
     <p>
-        Created using Django and hosted on DigitalOcean
+        Created using <a href="https://www.djangoproject.com/"><img src="{% static 'djangopythonlogo.png' %}" class="rounded float-left" alt="..."></a> and hosted on <img src="..." class="rounded float-left" alt="...">
     </p>
 </div>
 
