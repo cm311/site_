@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load blog_extras %}
+{% load static %}
+{% block content %}
+
+    <script src="{% static 'scripts/p5.js' %}" type="text/javascript"></script>
+    <script src="{% static 'scripts/p5.sound.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'searching-algos/sketch.js' %}" type="text/javascript"></script>
+    
+
+    <div id="content-main">
+        <div id='divControls'>
+            <label for="select-searching">Searching Algorithm</label>
+            <select id='select-searching'>
+                <option>Linear Search</option>
+                <option>Binary Search</option>
+            </select>
+            <br>
+            <br>
+            <button class='button' id='buttonCreateGraph' onclick="createarray()">Create array</button>
+            <button class='button' id='buttonCalculateShortestPath' onclick="startsort()">Start search</button>
+        </div>
+        <div id="sketch-holder">
+        </div>
+    </div>
+{% endblock %}

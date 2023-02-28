@@ -14,7 +14,7 @@ function setup() {
 }
 
 function draw() {
-    background(0);
+    background(20, 5, 5);
 
     if(isdrawn == true) {
 

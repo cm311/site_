@@ -15,12 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import app_site_main.views, algorithms.views
+import app_site_main.views, algorithms.views, nlp.views, radio.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('about/', app_site_main.views.about),
     path('', app_site_main.views.index),
     path('blog/<int:page_number>', app_site_main.views.blog),
+    path('other/', app_site_main.views.other),
     path('algorithms/', algorithms.views.index),
-    path('djikstras/', algorithms.views.djikstras)
+    path('djikstras/', algorithms.views.djikstras),
+    path('sorting-algos/', algorithms.views.sortingalgos),
+    path('searching-algos/', algorithms.views.searchingalgos),
+    path('nlp/', nlp.views.index),
+    path('radio/', radio.views.index),
 ]

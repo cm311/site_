@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load blog_extras %}
+{% block content %}
+    <div id="content-main">
+        <h4>Natural Language Processing Projects
+        </h4>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h5><u><a href="/finalproj/">Google News Analysis between languages</a></u></h5>
+                <p>Attempts to discover, measure and visualize the differences between news reporting on the SAME topic between DIFFERENT languages.</p>
+            </li>
+            <li class="list-group-item">
+                <h5><u><a href="/volkischer/">NLP analysis of the Volkischer Beobachter</a></u></h5>
+                <p>NLP techniques to analyze the rhetoric of the official newspaper of Nazi Germany.</p>
+            </li>
+            <li class="list-group-item">
+                <h5><u><a href="/ffchars/">Dialogue generation of RPG characters</a></u></h5>
+                <p>Random dialogue created from parsing the scripts of several JRPGs.</p>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
