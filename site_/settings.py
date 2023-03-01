@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'bootstrap4',
     'app_site_main',
-    'algorithms'
+    'algorithms',
+    'nlp',
+    'radio',
+
 ]
 
 MIDDLEWARE = [
