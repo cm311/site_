@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from pathlib import Path
+from .secret import SECRET_KEY as sk
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 #BASE_DIR = '/site_'
-print(BASE_DIR)
 
 
 
@@ -24,12 +24,14 @@ print(BASE_DIR)
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$5c^o2m_lm2k0oea8o3td6-&1na9v!@m^ope6=xba+_ndrht2g'
+#SECRET_KEY = '$5c^o2m_lm2k0oea8o3td6-&1na9v!@m^ope6=xba+_ndrht2g'
+SECRET_KEY = sk
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['137.184.214.253']
+ALLOWED_HOSTS = ['137.184.214.253', '*']
 
 
 # Application definition

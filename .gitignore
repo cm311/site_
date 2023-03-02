@@ -1,3 +1,5 @@
 site_virtual_env
+site_venv
 db.sqlite3
 *.pyc
+site_/secret.py
