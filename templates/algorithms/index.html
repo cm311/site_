@@ -3,9 +3,11 @@
 {% load static %}
 {% block content %}
     <div id="content-main">
-        <h4>Some visualizations of common algorithms coded in javascript and
+        <h5>Some visualizations of common algorithms and other things coded in javascript and
             <a href="https://p5js.org/"><img src="{% static 'p5js.png' %}" class="rounded logo" alt="..."></a>
-        </h4>
+        </h5>
+
+        <h2> Algorithm Visualizations</h2>
         <ul class="list-group">
             <li class="list-group-item"> 
                 <a href="/djikstras/">Djikstra's shortest path</a>
@@ -13,6 +15,10 @@
             <li class="list-group-item">
                 <a href="/searching-algos/">Linear Search</a>
             </li>
+        </ul>
+
+        <h2>Other Visualizations</h2>
+        <ul class="list-group">
         </ul>
     </div>
 {% endblock %}
