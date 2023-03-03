@@ -2,6 +2,7 @@
 {% load blog_extras %}
 {% block content %}
     <div id="content-main">
+        <!--
         {% for post in posts %}
             {% row "border-bottom" %}
             <div class="col">
@@ -15,5 +16,26 @@
             </div>
             {% endrow %}
         {% endfor %}
+        -->
+        
+        {% for post in posts %}
+            {% row "border-bottom" %}
+            <div class="col">
+                <h3> {{ posts|display_title:post }} </h3>
+                <p>{{ posts|display_created_at:post }} | ({{ posts|display_post:post|wordcount }} words)</p>
+
+                <pre id="post-content">
+                    <p>{{ posts|display_post:post|wordwrap:80 }}</p>
+                </pre>
+                    <div class="tags-div"><p> Tagged:
+                    {% for t in posts|get_tags:post %}
+                        <a href="#">{{t}}</a>
+                    {% endfor %}
+                    </p></div>
+            </div>
+            {% endrow %}
+        {% endfor %}
+
+        
     </div>
 {% endblock %}

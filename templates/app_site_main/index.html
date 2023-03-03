@@ -5,13 +5,17 @@
         {% for post in posts %}
             {% row "border-bottom" %}
             <div class="col">
-                <h3>{{ post.title }}</h3>
+                <h3> {{ posts|display_title:post }} </h3>
+                <p>{{ posts|display_created_at:post }} | ({{ posts|display_post:post|wordcount }} words)</p>
 
                 <pre id="post-content">
-                    <p>{{ post.content|wordwrap:80 }}</p>
-                    <p>{{ post.created_at }} | ({{ post.content|wordcount }} words)</p>
+                    <p>{{ posts|display_post:post|wordwrap:80 }}</p>
                 </pre>
-                
+                    <div class="tags-div"><p> Tagged:
+                    {% for t in posts|get_tags:post %}
+                        <a href="#">{{t}}</a>
+                    {% endfor %}
+                    </p></div>
             </div>
             {% endrow %}
         {% endfor %}

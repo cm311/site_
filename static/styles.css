@@ -61,3 +61,13 @@ a:hover {
     height: auto;    
     max-width: 10%;
 }
+
+.tags-div {
+    padding-bottom: 1%;
+}
+
+.tags-div a {
+    padding: 3px;
+    border-radius: 5px;
+    background-color:rgb(80, 35, 35);
+}

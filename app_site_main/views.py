@@ -25,20 +25,39 @@ def index(request, page_number=1):
     # log the tag ids for now.
     posts = Post.objects.filter(tags__in=[1])
     posts = posts.order_by('modified_at').reverse()[(page_number-1) *10 :page_number * 10]
-    logger.debug("Got %d posts", len(posts))
-    return render(request, "app_site_main/index.html", {"posts": posts})
+
+    #get the posts tags
+    displayed_posts = {}
+    for post in posts:
+
+        #initialize an empty dict for each post, then add the post as ['post'] and the tags as ['tags']
+        #custom filters are used to get what is needed from the django templating engine.
+        displayed_posts[post.pk] = {}
+        displayed_posts[post.pk]['post'] = post
+        displayed_posts[post.pk]['tags'] = post.tags.values_list('value', flat=True)
+
+    return render(request, "app_site_main/index.html", {"posts": displayed_posts})
+
+def blog(request, page_number=1):
+    posts = Post.objects.exclude(tags__in=[3])
+    posts = posts.order_by('modified_at').reverse()[(page_number-1) *10 :page_number * 10]
+
+    #get the posts tags
+    displayed_posts = {}
+    for post in posts:
+
+        #initialize an empty dict for each post, then add the post as ['post'] and the tags as ['tags']
+        #custom filters are used to get what is needed from the django templating engine.
+        displayed_posts[post.pk] = {}
+        displayed_posts[post.pk]['post'] = post
+        displayed_posts[post.pk]['tags'] = post.tags.values_list('value', flat=True)
+
+    return render(request, "app_site_main/blog.html", {"posts" : displayed_posts })
 
 def about(request):
     return render(request, "app_site_main/about.html")
 
-'''
-what I would like to do here is to 
-have multiple pages
-'''
-def blog(request, page_number=1):
-    posts = Post.objects.exclude(tags__in=[3])
-    posts = posts.order_by('modified_at').reverse()[(page_number-1) *10 :page_number * 10]
-    return render(request, "app_site_main/blog.html", {"posts" : posts})
+
 
 def other(request):
     return render(request, "app_site_main/other.html")

@@ -7,18 +7,21 @@ var boxPeel = [];
 
 
 function setup() {
-    var canvas = createCanvas(900, 800, WEBGL);
-    canvas.parent = canvas.parent('sinebars-sketch-holder');
+    smooth();
+    w = $('#holder').width();
+    canvas = createCanvas(w, 150, WEBGL);
+    canvas.parent('holder');
+    
     angleMode(DEGREES);
     
-    grid = {x_start: -400,
-           x_end: 400,
-           z_start: -400,
-           z_end: 400,
-           size: 16
+    grid = {x_start: -50,
+           x_end: 50,
+           z_start: -50,
+           z_end: 50,
+           size: 4
            };
     
-    box_size = 50;
+    box_size = 25;
     
     for(var i = 0; i < 200; i++) {
         confLocs.push(createVector(map(Math.random(), 0, 1, -500, 500),
@@ -31,11 +34,11 @@ function setup() {
     for(var i = 0; i < 256; i++) {
         boxPeel.push({isFalling: false,
                      fallDistance: 0});
-    }
+    } 
 }
 
 function draw() {
-    background(125);
+    background(20, 5, 5);
     camera(800, -600, 800, 
           0, 0, 0,
           0, 1, 0);
@@ -43,14 +46,16 @@ function draw() {
     directionalLight(100, map(sin(frameCount), -1, 1, 100, 220), 120, -400, 0, 0);
     directionalLight(100, 200, 120, 400, 1000, 0);
     
-    rotateY(frameCount/3);
+    rotateY(frameCount/2);
     
     ambientMaterial(255);
-    confetti();
+    //confetti();
     
     stroke(0);
     strokeWeight(2);
     drawBoxes();
+
+    console.log('script is running...')
 }
 
 function drawBoxes() {
@@ -64,7 +69,7 @@ function drawBoxes() {
             translate(x, 0, z);
             
             distance = dist(0, 0, x, z);
-            noise_move = map(noise(sin(distance) + frameCount/100), 0, 1, 100, 800)
+            noise_move = map(noise(sin(distance) + frameCount/60), 0, 1, 100, 800)
             
             
             height = noise_move;
