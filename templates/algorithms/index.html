@@ -2,7 +2,10 @@
 {% load blog_extras %}
 {% load static %}
 {% block content %}
+<script src="{% static 'graphics_stuff/sinebars.js' %}" type="text/javascript"></script>
     <div id="content-main">
+
+
         <h5>Some visualizations of common algorithms and other things coded in javascript and
             <a href="https://p5js.org/"><img src="{% static 'p5js.png' %}" class="rounded logo" alt="..."></a>
         </h5>
@@ -19,6 +22,8 @@
 
         <h2>Other Visualizations</h2>
         <ul class="list-group">
+            <div id="sinebars-sketch-holder">
+            </div>
         </ul>
     </div>
 {% endblock %}
