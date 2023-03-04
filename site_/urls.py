@@ -22,6 +22,7 @@ urlpatterns = [
     path('about/', app_site_main.views.about),
     path('', app_site_main.views.index),
     path('blog/<int:page_number>', app_site_main.views.blog),
+    path('blog/<str:tag_name>/<int:page_number>', app_site_main.views.blog_with_tag),
     path('other/', app_site_main.views.other),
     path('algorithms/', algorithms.views.index),
     path('djikstras/', algorithms.views.djikstras),

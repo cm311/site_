@@ -39,7 +39,7 @@ def index(request, page_number=1):
     return render(request, "app_site_main/index.html", {"posts": displayed_posts})
 
 def blog(request, page_number=1):
-    posts = Post.objects.exclude(tags__in=[3])
+    posts = Post.objects.all()
     posts = posts.order_by('modified_at').reverse()[(page_number-1) *10 :page_number * 10]
 
     #get the posts tags
@@ -53,6 +53,19 @@ def blog(request, page_number=1):
         displayed_posts[post.pk]['tags'] = post.tags.values_list('value', flat=True)
 
     return render(request, "app_site_main/blog.html", {"posts" : displayed_posts })
+
+def blog_with_tag(request, tag_name, page_number=1):
+    tag = Tag.objects.filter(value=tag_name)[0]
+    posts = Post.objects.select_related().filter(tags = tag.pk)
+    posts = posts.order_by('modified_at').reverse()[(page_number-1) *10 :page_number * 10]
+    #get the posts tags
+    displayed_posts = {}
+    for post in posts:
+
+        displayed_posts[post.pk] = {}
+        displayed_posts[post.pk]['post'] = post
+        displayed_posts[post.pk]['tags'] = post.tags.values_list('value', flat=True)
+    return render(request, "app_site_main/blog.html", {"posts" : displayed_posts})
 
 def about(request):
     return render(request, "app_site_main/about.html")
