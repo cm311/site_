@@ -39,8 +39,21 @@ def col(extra_classes=""):
 def endcol():
     return format_html("</div>")
 
+@register.simple_tag
+def wh3_lord_col():
+    return format_html('<div class="col"><div class="card shadow-sm"> \
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" \
+                    role="img" aria-label="khazrak" preserveAspectRatio="xMidYMid meet" focusable="false">')
 
+@register.simple_tag
+def endwh3_lord_col():
+    return format_html("</div></div>")
 
+@register.simple_tag
+def show_modal_button():
+    return format_html('<div class="d-flex justify-content-between align-items-center"> \
+                        <div class="btn-group"><button type="button" class="btn btn-sm btn-outline-secondary" \
+                        data-toggle="modal" data-target="#myModal">Vanilla vs. SFO</button></div></div>')
 
 
 

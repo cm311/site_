@@ -3,3 +3,4 @@ site_venv
 db.sqlite3
 *.pyc
 site_/secret.py
+*/__pycache__

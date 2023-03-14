@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load blog_extras %}
+{% load static %}
+{% block content %}
+
+    <script src="{% static 'scripts/p5.js' %}" type="text/javascript"></script>
+    <script src="{% static 'scripts/p5.sound.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'searching-algos/binary.js' %}" type="text/javascript"></script>
+    
+
+    <div id="content-main">
+        <div id='divControls'>
+
+            <br>
+            <br>
+            <button class='button' id='buttonCreateArray' onclick="createarray()">Create array</button>
+            <button class='button' id='buttonStartSearch' onclick="startsearch()">Start search</button>
+        </div>
+        <div id="sketch-holder">
+        </div>
+    </div>
+{% endblock %}

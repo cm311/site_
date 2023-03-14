@@ -4,6 +4,7 @@ body {
     color : rgb(221, 195, 195);
     padding-top: 56px;
     margin-left: 5%;
+    margin-right: 5%;
 }
 
 h3 {
@@ -13,7 +14,7 @@ h3 {
 
 #content-main {
     margin-left: 2%;
-    margin-right: 38%;
+    margin-right: 34%;
     margin-top: 4%;
 }
 
@@ -57,6 +58,20 @@ a:hover {
     }
 }
 
+.container {
+    max-width: 100%;
+}
+
+.btn {
+    color : rgb(221, 195, 195);
+    border-color: rgb(189, 155, 155);
+}
+
+.btn:hover {
+    background-color: rgb(128, 83, 83);
+}
+
+
 .logo {
     height: auto;    
     max-width: 10%;
@@ -71,3 +86,41 @@ a:hover {
     border-radius: 5px;
     background-color:rgb(80, 35, 35);
 }
+
+.album {
+    background-color: rgb(20, 5, 5);
+}
+
+.card {
+    border: none;
+}
+
+.card-img-top {
+    background-color: rgb(20, 5, 5);
+}
+
+.card-body {
+    background-color: rgb(40, 15, 15);
+}
+
+.modal {
+    max-width: 100%;
+}
+
+.modal-dialog {
+    max-width: 50%;
+}
+
+.modal-content {
+    background-color:rgb(20, 5, 5);
+}
+
+
+.modal-xl {
+    max-width: 90%;
+}
+
+.modal-body-image img {
+    max-width: 100%;
+    max-height: 100%;
+  }

@@ -27,7 +27,8 @@ urlpatterns = [
     path('algorithms/', algorithms.views.index),
     path('djikstras/', algorithms.views.djikstras),
     path('sorting-algos/', algorithms.views.sortingalgos),
-    path('searching-algos/', algorithms.views.searchingalgos),
+    path('linear-search/', algorithms.views.linearsearch),
+    path('binary-search/', algorithms.views.binarysearch),
     path('nlp/', nlp.views.index),
     path('radio/', radio.views.index),
 ]

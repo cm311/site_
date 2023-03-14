@@ -21,3 +21,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class WH3Lord(models.Model):
+    name = models.TextField(max_length=200)
+    faction = models.TextField(max_length=100)
+    summary_of_changes = models.TextField(max_length=500)
+
+    def __str__(self):
+        return str(self.faction) + '_' + str(self.name)
