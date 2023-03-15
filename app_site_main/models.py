@@ -29,8 +29,8 @@ class WH3Lord(models.Model):
     faction = models.TextField(max_length=100)
     summary_of_changes = models.TextField(max_length=500)
     campaign_review = models.TextField(default="NotEntered")
-    changes_picture = models.ImageField(default='', upload_to = staticdirs[0] + '\\wh3_lords_pictures')
-    icon = models.ImageField(default='', upload_to = staticdirs[0] + '\\wh3_lords_icons')
+    changes_picture = models.ImageField(default='', upload_to = 'wh3_lords_pictures')
+    icon = models.ImageField(default='', upload_to = 'wh3_lords_icons')
     
 
     def __str__(self):
