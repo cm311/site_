@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 import app_site_main.views, algorithms.views, nlp.views, radio.views
 
 urlpatterns = [
@@ -33,3 +35,6 @@ urlpatterns = [
     path('nlp/', nlp.views.index),
     path('radio/', radio.views.index),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

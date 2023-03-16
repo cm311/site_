@@ -32,6 +32,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['137.184.214.253', '*']
 
+CSRF_TRUSTED_ORIGINS = ['http://137.184.214.253']
+
+CORS_ORIGIN_WHITELIST = ['http://137.184.214.253']
+
 
 # Application definition
 
@@ -138,3 +142,4 @@ STATICFILES_DIRS = [
 
 
 MEDIA_ROOT = '/site_/static/'
+MEDIA_URL = '/site_/static/'

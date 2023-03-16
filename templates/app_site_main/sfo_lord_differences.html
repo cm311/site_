@@ -16,7 +16,7 @@
             <!--Called from DB with AJAX call for the modal picture-->
             {% for lord in lords %}
                 {% wh3_lord_col %}
-                <title>{{lord.title}}</title><image class="faction-icon" width="70%" height="70%" href="../{{lord.icon}}"></image>
+		<title>{{lord.title}}</title><image class="faction-icon" width="70%" height="70%" href="{{STATIC_URL}}{{lord.icon}}"></image>
                 <text x="10%" y="80%" fill="#eceeef" dy=".3em">{{lord.title}}</text>
                 </svg>
 
