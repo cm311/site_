@@ -77,7 +77,6 @@ def about(request):
 def getlordimage(request, lord_name):
     image_name = 'example.jpg'  # Replace with the desired image name
     image_path = staticdirs[0] + '/wh3_lords_pictures/' + lord_name + '.jpg'
-    print(image_path)
 
     # Serve the image as a FileResponse
     response = FileResponse(open(image_path, 'rb'), content_type='image/jpeg')
@@ -87,5 +86,4 @@ def getlordimage(request, lord_name):
 
 def sfo_lord_differences(request):
     lords = WH3Lord.objects.all()
-    print(str(staticdirs[0]) + "/" + str(lords[0].icon))
-    return render(request, "app_site_main/sfo_lord_differences.html",  {"lords" : lords, "STATIC_URL" : settings.STATIC_URL})
+    return render(request, "app_site_main/sfo_lord_differences.html",  {"lords" : lords, "STATIC_URL" : settings.STATIC_URL[7:]})
