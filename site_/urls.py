@@ -24,6 +24,7 @@ urlpatterns = [
     path('about/', app_site_main.views.about),
     path('', app_site_main.views.index),
     path('blog/<int:page_number>', app_site_main.views.blog),
+    path('new_post/', app_site_main.views.new_post),
     path('blog/<str:tag_name>/<int:page_number>', app_site_main.views.blog_with_tag),
     path('sfo_lord_differences/', app_site_main.views.sfo_lord_differences),
     path('getlordimage/<str:lord_name>', app_site_main.views.getlordimage),

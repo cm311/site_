@@ -17,6 +17,13 @@
             {% endrow %}
         {% endfor %}
         -->
+
+        {% if user.is_authenticated %}
+        <form action="/new_post/" method="get">
+            <button >New post</button>
+        </form>
+        
+        {% endif %}
         
         {% for post in posts %}
             {% row "border-bottom" %}
@@ -25,7 +32,7 @@
                 <p>{{ posts|display_created_at:post }} | ({{ posts|display_post:post|wordcount }} words)</p>
 
                 <pre id="post-content">
-                    <p>{{ posts|display_post:post|wordwrap:80 }}</p>
+                    <p id="post-content">{{ posts|display_post:post|wordwrap:80 }}</p>
                 </pre>
                     <div class="tags-div"><p> Tagged:
                     {% for t in posts|get_tags:post %}

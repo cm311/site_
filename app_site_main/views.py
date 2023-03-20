@@ -1,9 +1,11 @@
 import logging
+import datetime
 from django.shortcuts import render
-from django.http import FileResponse
+from django.http import FileResponse, HttpResponseRedirect
 from django.conf import settings
 from site_.settings import STATICFILES_DIRS as staticdirs
 from .models import *
+from .forms import PostForm
 
 
 #create a module-level logging variable.  Can be used to add logger calls
@@ -70,8 +72,26 @@ def blog_with_tag(request, tag_name, page_number=1):
         displayed_posts[post.pk]['tags'] = post.tags.values_list('value', flat=True)
     return render(request, "app_site_main/blog.html", {"posts" : displayed_posts})
 
-def about(request):
+def new_post(request):
+    print("it worked")
+    
+    if request.method == 'POST':
+        post = PostForm(request.POST)
 
+        if post.is_valid():
+            post.save()
+
+        #created_at = models.DateTimeField(auto_now_add=True)
+        #modified_at =  models.DateTimeField(auto_now=True)
+        #published_at = models.DateTimeField(blank=True, null=True, db_index=True)
+        
+        return HttpResponseRedirect('/')
+    else:
+        form = PostForm()
+        return render(request, "app_site_main/new_post.html", {'form' : form})
+
+
+def about(request):
     return render(request, "app_site_main/about.html")
 
 def getlordimage(request, lord_name):
