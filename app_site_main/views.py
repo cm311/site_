@@ -86,4 +86,4 @@ def getlordimage(request, lord_name):
 
 def sfo_lord_differences(request):
     lords = WH3Lord.objects.all()
-    return render(request, "app_site_main/sfo_lord_differences.html",  {"lords" : lords, "STATIC_URL" : settings.STATIC_URL[7:]})
+    return render(request, "app_site_main/sfo_lord_differences.html",  {"lords" : lords, "STATIC_URL" : settings.STATIC_URL})
