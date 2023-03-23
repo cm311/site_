@@ -35,7 +35,7 @@ urlpatterns = [
     path('binary-search/', algorithms.views.binarysearch),
     path('nlp/', nlp.views.index),
     path('radio/', radio.views.index),
-    path('little_lemon/', include('little_lemon.urls'))
+    path('little-lemon/', include('little_lemon.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
