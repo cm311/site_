@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 import app_site_main.views, algorithms.views, nlp.views, radio.views
@@ -35,6 +35,7 @@ urlpatterns = [
     path('binary-search/', algorithms.views.binarysearch),
     path('nlp/', nlp.views.index),
     path('radio/', radio.views.index),
+    path('little_lemon/', include('little_lemon.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

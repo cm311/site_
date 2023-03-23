@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'algorithms',
     'nlp',
     'radio',
+    'little_lemon'
 
 ]
 

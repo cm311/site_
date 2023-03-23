@@ -73,8 +73,6 @@ def blog_with_tag(request, tag_name, page_number=1):
     return render(request, "app_site_main/blog.html", {"posts" : displayed_posts})
 
 def new_post(request):
-    print("it worked")
-    
     if request.method == 'POST':
         post = PostForm(request.POST)
 
